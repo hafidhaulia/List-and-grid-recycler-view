@@ -129,7 +129,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_view:
-                isGrid = !isGrid;
+                if (isGrid) {
+                    isGrid = false;
+                    floatingActionButton.setImageResource(R.drawable.ic_grid_on);
+                }
+                else {
+                    isGrid = true;
+                    floatingActionButton.setImageResource(R.drawable.ic_list_on);
+                }
                 updateData();
                 break;
         }
